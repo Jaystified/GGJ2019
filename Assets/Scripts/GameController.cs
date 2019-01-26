@@ -33,5 +33,22 @@ public class GameController : MonoBehaviour
         }
         Instantiate(Player, new Vector3(1 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
         Instantiate(Enemy, new Vector3((sizex -2) * spriteSize, (sizey -2) * spriteSize, 0), Quaternion.identity);
+
+        Tuple<int, int> keyPosition = KeyPosition();
+        Debug.Log(keyPosition.Item1 + "," + keyPosition.Item2);
+        Instantiate(Key, new Vector3(keyPosition.Item1 * spriteSize, keyPosition.Item2 * spriteSize, 0), Quaternion.identity);
+        
+    }
+
+    public Tuple<int, int> KeyPosition() {
+        int xBlockPosition = UnityEngine.Random.Range(0, sizex-1);
+        int yBlockPosition = UnityEngine.Random.Range(0, sizey-1);
+        
+        while(generator.data[xBlockPosition, yBlockPosition] == 0) {
+            xBlockPosition = UnityEngine.Random.Range(0, sizex-1);
+            yBlockPosition = UnityEngine.Random.Range(0, sizey-1);
+        }
+
+        return new Tuple<int, int>(xBlockPosition, yBlockPosition); 
     }
 }
