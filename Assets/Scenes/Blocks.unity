@@ -227,7 +227,7 @@ MonoBehaviour:
   Wall: {fileID: 1288846989192057503, guid: cdcb10c56cd20e244b3ebebbe62a4bde, type: 3}
   Road: {fileID: 6289886531307736479, guid: c181fc18169c824b5a2466f9065653c3, type: 3}
   Player: {fileID: 3600680926833631957, guid: 7aea7a0d77718da3aac0822d31e3c2d7, type: 3}
-  Enemy: {fileID: 0}
+  Enemy: {fileID: 2543978014441969029, guid: 899e607db71ee9543bebadd59de9cebc, type: 3}
   Key: {fileID: 0}
   sizex: 31
   sizey: 31

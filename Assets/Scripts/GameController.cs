@@ -32,5 +32,6 @@ public class GameController : MonoBehaviour
             }
         }
         Instantiate(Player, new Vector3(1 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
+        Instantiate(Enemy, new Vector3((sizex -2) * spriteSize, (sizey -2) * spriteSize, 0), Quaternion.identity);
     }
 }
