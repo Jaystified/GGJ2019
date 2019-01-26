@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour
     private MazeConstructor generator;
     public Transform Wall;
     public Transform Road;
+    public Transform Player;
+    public Transform Enemy;
+    public Transform Key;
     public int sizex = 13;
     public int sizey = 15;
     public float spriteSize = 0.32F;
@@ -24,9 +27,10 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(Road, new Vector3(x * spriteSize, y * spriteSize, 0), Quaternion.identity);
+                    Instantiate(Road, new Vector3(x * spriteSize, y * spriteSize, 1), Quaternion.identity);
                 }
             }
         }
+        Instantiate(Player, new Vector3(1 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
     }
 }

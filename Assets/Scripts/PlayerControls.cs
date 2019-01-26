@@ -1,0 +1,4 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class Player_move : MonoBehaviour { Rigidbody2D rb; Animator animator;[SerializeField] public Vector2 SPEED = new Vector2(0.05f, 0.05f); void Start() { this.animator = GetComponent<Animator>(); } void Update() { Move(); } void Move() { Vector2 Position = transform.position; if (Input.GetKey(KeyCode.A)) { Position.x -= SPEED.x; } else if (Input.GetKey(KeyCode.D)) { Position.x += SPEED.x; } else if (Input.GetKey(KeyCode.W)) { Position.y += SPEED.y; } else if (Input.GetKey(KeyCode.S)) { Position.y -= SPEED.y; } transform.position = Position; this.animator.speed = SPEED.x / 0.1f; this.animator.speed = SPEED.y / 0.1f; } }
