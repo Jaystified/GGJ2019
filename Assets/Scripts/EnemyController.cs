@@ -15,7 +15,6 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Enemy Start Method");
         // gameController = unitychan.GetComponent<GameController>();
 
         // player = GameObject.Find("Player").transform;
@@ -26,9 +25,6 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         Transform player = GameObject.FindWithTag("Player").transform;
-        Debug.Log(player);
-
-        Debug.Log("Enemy Update Method");
         float diffX = player.position.x - transform.position.x ;
         float diffY = player.position.y - transform.position.y ;
 

@@ -45,7 +45,8 @@ public class GameController : MonoBehaviour
         Instantiate(Enemy, new Vector3(enemyPosition.Item1 * spriteSize, enemyPosition.Item2 * spriteSize, 0), Quaternion.identity);
 
         Tuple<int, int> keyPosition = RandomPosition();
-        Instantiate(Key, new Vector3(keyPosition.Item1 * spriteSize, keyPosition.Item2 * spriteSize, 0), Quaternion.identity);
+        // Instantiate(Key, new Vector3(keyPosition.Item1 * spriteSize, keyPosition.Item2 * spriteSize, 0), Quaternion.identity);
+        Instantiate(Key, new Vector3(3 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
         
     }
 
