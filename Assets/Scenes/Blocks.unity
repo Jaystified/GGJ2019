@@ -164,7 +164,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 5, z: -10}
+  m_LocalPosition: {x: 10, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -225,13 +225,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wall: {fileID: 1288846989192057503, guid: cdcb10c56cd20e244b3ebebbe62a4bde, type: 3}
+  Wall2: {fileID: 1288846989192057503, guid: 59d39c45370a5f4a087e5698e014e073, type: 3}
   Road: {fileID: 6289886531307736479, guid: c181fc18169c824b5a2466f9065653c3, type: 3}
   Player: {fileID: 3600680926833631957, guid: 7aea7a0d77718da3aac0822d31e3c2d7, type: 3}
   Enemy: {fileID: 2543978014441969029, guid: 899e607db71ee9543bebadd59de9cebc, type: 3}
   Key: {fileID: 0}
+  MyHouse: {fileID: 0}
   sizex: 31
   sizey: 31
   spriteSize: 0.32
+  sizeMultiplayer: 2
 --- !u!4 &2012935384
 Transform:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     //走っている間の速度
     [SerializeField]
     [Header("歩いている速度に加算")]
-    float SPPEDRUN = 0.03f;
+    public float SPPEDRUN = 0.03f;
 
 
     // Use this for initialization
