@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [Header("歩いている速度に加算")]
     public float SPPEDRUN = 0.03f;
 
+    // 鍵を持っているか
+    public bool hasKey = false;
 
     // Use this for initialization
     void Start()
