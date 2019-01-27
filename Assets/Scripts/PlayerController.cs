@@ -20,11 +20,15 @@ public class PlayerController : MonoBehaviour
     public bool hasKey = false;
 
     Animator anim;
+    private AudioSource walk;
+    public AudioClip stepsound;
 
     // Use this for initialization
     void Start()
     {
+        walk = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        walk.clip = stepsound;
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Player = gameObject;
         //this.animator = GetComponent<Animator>();
     }
@@ -47,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow)) //左
         {
+            walk.mute = false;
             anim.SetBool("Push", true);
             anim.SetInteger("Dir", 1);
             Position.x -= SPEED.x;
@@ -57,6 +62,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow)) //右
         {
+            walk.mute = false;
             anim.SetBool("Push", true);
             anim.SetInteger("Dir", 2);
             Position.x += SPEED.x;
@@ -68,6 +74,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.UpArrow)) //上
         {
+            walk.mute = false;
             anim.SetBool("Push", true);
             anim.SetInteger("Dir", 3);
             Position.y += SPEED.y;
@@ -78,6 +85,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.DownArrow)) //下
         {
+            walk.mute = false;
             anim.SetBool("Push", true);
             anim.SetInteger("Dir", 0);
             Position.y -= SPEED.y;
@@ -85,6 +93,9 @@ public class PlayerController : MonoBehaviour
             {
                 Position.y -= SPEED.y + SPPEDRUN;
             }
+        } else
+        {
+            walk.mute = true;
         }
 
 
