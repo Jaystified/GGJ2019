@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DEFAULT_SPEED: 0.01
   CAUSION_SPEED_RATIO: 3
-  SPEED: {x: 0.05, y: 0.05}
+  SPEED: {x: 0.075, y: 0.075}
 --- !u!70 &8386293904986135412
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

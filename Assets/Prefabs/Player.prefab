@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a8f9342afae8df7824b0d1a0aa3977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SPEED: {x: 0.003, y: 0.003}
-  SPPEDRUN: 0.03
+  SPEED: {x: 0.004, y: 0.004}
+  SPPEDRUN: 0.003
   hasKey: 0
   stepsound: {fileID: 8300000, guid: 40196d539751c02a3a5724446118b008, type: 3}
 --- !u!70 &8243947673470069637
