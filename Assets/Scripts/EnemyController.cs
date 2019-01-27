@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     public float DEFAULT_SPEED = 0.1f;
 
     // Playerが鍵を持ったらSpeed Up
-    public float CAUSION_SPEED_RATIO = 3f;
+    public float CAUSION_SPEED_RATIO = 5f;
 
     public Vector2 SPEED = new Vector2(0.05f, 0.05f);
 
@@ -35,10 +35,10 @@ public class EnemyController : MonoBehaviour
         Vector2 tmpPosition = transform.position;
 
         float speedRatio = DEFAULT_SPEED;
-        // PlayerController playerController = gameObject.GetComponent<PlayerController>();
-        // if (playerController.hasKey) {
-        //     speedRatio *= CAUSION_SPEED_RATIO;
-        // }
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if (playerController.hasKey) {
+            speedRatio *= CAUSION_SPEED_RATIO;
+        }
         
         if (randomBoolean())
         {
