@@ -264,7 +264,7 @@ MonoBehaviour:
   Player: {fileID: 3600680926833631957, guid: 7aea7a0d77718da3aac0822d31e3c2d7, type: 3}
   Enemy: {fileID: 2543978014441969029, guid: 899e607db71ee9543bebadd59de9cebc, type: 3}
   Key: {fileID: 3564550529717076226, guid: 0576b1f191c463244a1570ab86ecd076, type: 3}
-  MyHouse: {fileID: 0}
+  MyHouse: {fileID: 9001758677537103125, guid: 544a105d5b8751cd99ba0e329086cde3, type: 3}
   sizex: 11
   sizey: 11
   spriteSize: 0.32
