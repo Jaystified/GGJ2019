@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     public int sizex = 13;
     public int sizey = 15;
     public float spriteSize = 0.32F;
-    public int sizeMultiplayer = 2;
+    public int sizeMultiplier = 2;
     void Start()
     {
         generator = GetComponent<MazeConstructor>();      // 2
@@ -27,27 +27,28 @@ public class GameController : MonoBehaviour
                 if (generator.data[x,y] == 1) {
                     if (randomBoolean())
                     {
-                        Instantiate(Wall, new Vector3(x * spriteSize * sizeMultiplayer, y * spriteSize * sizeMultiplayer, 0), Quaternion.identity);
+                        Instantiate(Wall, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 0), Quaternion.identity);
                     }
                     else
                     {
-                        Instantiate(Wall2, new Vector3(x * spriteSize * sizeMultiplayer, y * spriteSize * sizeMultiplayer, 0), Quaternion.identity);
+                        Instantiate(Wall2, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 0), Quaternion.identity);
                     }
                 }
                 else
                 {
-                    Instantiate(Road, new Vector3(x * spriteSize * sizeMultiplayer, y * spriteSize * sizeMultiplayer, 1), Quaternion.identity);
+                    Instantiate(Road, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 1), Quaternion.identity);
                 }
             }
         }
         Instantiate(Player, new Vector3(1 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
         Tuple<int, int> enemyPosition = RandomPosition();
-        Instantiate(Enemy, new Vector3(enemyPosition.Item1 * spriteSize, enemyPosition.Item2 * spriteSize, 0), Quaternion.identity);
+        //Instantiate(Enemy, new Vector3(enemyPosition.Item1 * spriteSize, enemyPosition.Item2 * spriteSize, 0), Quaternion.identity);
 
         Tuple<int, int> keyPosition = RandomPosition();
         // Instantiate(Key, new Vector3(keyPosition.Item1 * spriteSize, keyPosition.Item2 * spriteSize, 0), Quaternion.identity);
         Instantiate(Key, new Vector3(3 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
-        
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().gameAreaY = sizey * spriteSize*sizeMultiplier;
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().gameAreaX = sizex * spriteSize*sizeMultiplier;
     }
 
     public Tuple<int, int> RandomPosition() {

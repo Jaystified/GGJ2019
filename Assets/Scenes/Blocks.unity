@@ -123,8 +123,10 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
+  - component: {fileID: 519420030}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,6 +140,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7171a7db27a297d40b275e6087e1e921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  gameAreaY: 1074
+  gameAreaX: 776
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -164,7 +181,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -194,6 +211,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c06ee3c5007f18648da4279f1ab2192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebug: 0
+  mazeMat1: {fileID: 0}
+  mazeMat2: {fileID: 0}
+  startMat: {fileID: 0}
+  treasureMat: {fileID: 0}
 --- !u!1 &2012935382
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,12 +263,12 @@ MonoBehaviour:
   Road: {fileID: 6289886531307736479, guid: c181fc18169c824b5a2466f9065653c3, type: 3}
   Player: {fileID: 3600680926833631957, guid: 7aea7a0d77718da3aac0822d31e3c2d7, type: 3}
   Enemy: {fileID: 2543978014441969029, guid: 899e607db71ee9543bebadd59de9cebc, type: 3}
-  Key: {fileID: 0}
+  Key: {fileID: 3564550529717076226, guid: 0576b1f191c463244a1570ab86ecd076, type: 3}
   MyHouse: {fileID: 0}
-  sizex: 31
-  sizey: 31
+  sizex: 11
+  sizey: 11
   spriteSize: 0.32
-  sizeMultiplayer: 2
+  sizeMultiplier: 2
 --- !u!4 &2012935384
 Transform:
   m_ObjectHideFlags: 0
