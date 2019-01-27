@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    Animator animator;
 
     //歩いている速度
     [SerializeField]
@@ -20,9 +19,12 @@ public class PlayerController : MonoBehaviour
     // 鍵を持っているか
     public bool hasKey = false;
 
+    Animator anim;
+
     // Use this for initialization
     void Start()
     {
+        anim = GetComponent<Animator>();
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Player = gameObject;
         //this.animator = GetComponent<Animator>();
     }
@@ -36,12 +38,14 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-
+        anim.SetBool("Push", false);
 
         Vector2 Position = transform.position;
 
         if (Input.GetKey(KeyCode.LeftArrow)) //左
         {
+            anim.SetBool("Push", true);
+            anim.SetInteger("Dir", 1);
             Position.x -= SPEED.x;
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.LeftShift))
             {
@@ -50,6 +54,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow)) //右
         {
+            anim.SetBool("Push", true);
+            anim.SetInteger("Dir", 2);
             Position.x += SPEED.x;
             if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftShift))
             {
@@ -59,6 +65,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.UpArrow)) //上
         {
+            anim.SetBool("Push", true);
+            anim.SetInteger("Dir", 3);
             Position.y += SPEED.y;
             if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftShift))
             {
@@ -67,6 +75,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.DownArrow)) //下
         {
+            anim.SetBool("Push", true);
+            anim.SetInteger("Dir", 0);
             Position.y -= SPEED.y;
             if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftShift))
             {
