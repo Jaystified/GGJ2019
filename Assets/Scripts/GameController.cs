@@ -50,19 +50,22 @@ public class GameController : MonoBehaviour
         Instantiate(Player, new Vector3(1 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
         // Instantiate(Player, new Vector3(myHousePosition[0] * spriteSize, (myHousePosition[1]-1) * spriteSize, 0), Quaternion.identity);
         Tuple<int, int> enemyPosition = RandomPosition();
-        Instantiate(Enemy, new Vector3(enemyPosition.Item1 * spriteSize, enemyPosition.Item2 * spriteSize, 0), Quaternion.identity);
+        Debug.Log("enemyPosition=" + enemyPosition.Item1 + "," + enemyPosition.Item2);
+        Instantiate(Enemy, new Vector3(enemyPosition.Item1 * spriteSize * sizeMultiplier, enemyPosition.Item2 * spriteSize * sizeMultiplier, 0), Quaternion.identity);
 
         Tuple<int, int> keyPosition = RandomPosition();
-        // Instantiate(Key, new Vector3(keyPosition.Item1 * spriteSize, keyPosition.Item2 * spriteSize, 0), Quaternion.identity);
-        Instantiate(Key, new Vector3(3 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
+        Debug.Log("keyPosition=" + keyPosition.Item1 + "," + keyPosition.Item2);
+        Instantiate(Key, new Vector3(keyPosition.Item1 * spriteSize * sizeMultiplier, keyPosition.Item2 * spriteSize * sizeMultiplier, 0), Quaternion.identity);
+        // Instantiate(Key, new Vector3(3 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().gameAreaY = sizey * spriteSize*sizeMultiplier;
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().gameAreaX = sizex * spriteSize*sizeMultiplier;
     }
 
     public Tuple<int, int> RandomPosition() {
         for(int i=0; ; i++) {
-            int xBlockPosition = UnityEngine.Random.Range(0, sizex-1);
-            int yBlockPosition = UnityEngine.Random.Range(0, sizey-1);
+            // Playerから遠いところに配置する
+            int xBlockPosition = UnityEngine.Random.Range(sizex/2, sizex-1);
+            int yBlockPosition = UnityEngine.Random.Range(sizey/2, sizey-1);
 
             if(generator.data[xBlockPosition, yBlockPosition] == 0) {
                 return new Tuple<int, int>(xBlockPosition, yBlockPosition); 
