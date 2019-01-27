@@ -7,7 +7,6 @@ public class KeyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -15,4 +14,21 @@ public class KeyController : MonoBehaviour
     {
         
     }
+
+    // トリガーとの接触時に呼ばれるコールバック
+    void OnTriggerEnter2D (Collider2D hit)
+    {
+        if (hit.CompareTag ("Player")) {
+            PlayerController playerController = hit.gameObject.GetComponent<PlayerController>();
+
+            // Flag設定            
+            playerController.hasKey = true;
+
+            Debug.Log("Player has key. playerController.hasKey=" + playerController.hasKey);
+            
+            Destroy(gameObject);
+            
+        }
+    }  
+
 }
