@@ -24,19 +24,24 @@ public class GameController : MonoBehaviour
         for (int y=0;y<sizey;y++) {
             for (int x=0;x<sizex;x++)
             {
-                if (generator.data[x,y] == 1) {
-                    if (randomBoolean())
-                    {
-                        Instantiate(Wall, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 0), Quaternion.identity);
+                if (x==sizex-2 && y == sizey - 1)
+                {
+                    Instantiate(MyHouse, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 0), Quaternion.identity);
+                } else { 
+                    if (generator.data[x,y] == 1) {
+                        if (randomBoolean())
+                        {
+                            Instantiate(Wall, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 0), Quaternion.identity);
+                        }
+                        else
+                        {
+                            Instantiate(Wall2, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 0), Quaternion.identity);
+                        }
                     }
                     else
                     {
-                        Instantiate(Wall2, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 0), Quaternion.identity);
+                        Instantiate(Road, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 1), Quaternion.identity);
                     }
-                }
-                else
-                {
-                    Instantiate(Road, new Vector3(x * spriteSize * sizeMultiplier, y * spriteSize * sizeMultiplier, 1), Quaternion.identity);
                 }
             }
         }
