@@ -11,39 +11,16 @@ public class EnemyController : MonoBehaviour
         
     public Vector2 SPEED = new Vector2(0.05f, 0.05f);
 
-    // GameController gameController;
-
     void Start()
     {
-        // gameController = unitychan.GetComponent<GameController>();
-
-        // player = GameObject.Find("Player").transform;
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         Transform player = GameObject.FindWithTag("Player").transform;
         float diffX = player.position.x - transform.position.x ;
         float diffY = player.position.y - transform.position.y ;
-
-        // // 現在位置をPositionに代入
-		// Vector2 tmpPosition = transform.position;
-		// // 左キーを押し続けていたら
-        // float ratio = 0.1f;
-
-        // float moveX = SPEED.x * ratio;
-        // if(diffX < 0){
-        //     moveX = - moveX;
-        // }
-        // float moveY = SPEED.y * ratio;
-        // if(diffY < 0){ 
-        //     moveY = - moveY;
-        // }
-
-        // Debug.Log("moveX, moveY=" + moveX + "," + moveY);
-		// transform.Translate(moveX, moveY, 0f);
         
         Vector2 tmpPosition = transform.position;
         if (randomBoolean()) {
@@ -70,4 +47,13 @@ public class EnemyController : MonoBehaviour
         }
         return false;
     }
+
+    void OnTriggerEnter2D (Collider2D hit)
+    {
+        if (hit.CompareTag ("Player")) {
+            Debug.Log("PlayerはEnemyに接触した。 OnTriggerEnter2D.");
+            //TODO 敵に当たったらGame Overのシーンに移動する
+        }
+    }
+
 }
