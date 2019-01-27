@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KeyController : MonoBehaviour
 {
+    private AudioSource pick;
+    public AudioClip picksound;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +25,10 @@ public class KeyController : MonoBehaviour
 
             // Flag設定            
             playerController.hasKey = true;
-
+            pick.PlayOneShot(picksound);
             Debug.Log("Player has key. playerController.hasKey=" + playerController.hasKey);
-            
-            Destroy(gameObject);
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
             
         }
     }  
