@@ -8,7 +8,10 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     private Transform player;
 
-    public float RATIO = 0.1f;
+    public float DEFAULT_SPEED = 0.1f;
+
+    // Playerが鍵を持ったらSpeed Up
+    public float CAUSION_SPEED_RATIO = 3f;
 
     public Vector2 SPEED = new Vector2(0.05f, 0.05f);
 
@@ -30,26 +33,33 @@ public class EnemyController : MonoBehaviour
         float diffY = player.position.y - transform.position.y;
         
         Vector2 tmpPosition = transform.position;
+
+        float speedRatio = DEFAULT_SPEED;
+        // PlayerController playerController = gameObject.GetComponent<PlayerController>();
+        // if (playerController.hasKey) {
+        //     speedRatio *= CAUSION_SPEED_RATIO;
+        // }
+        
         if (randomBoolean())
         {
             if (diffX > 0)
             {
-                tmpPosition.x += SPEED.x * RATIO;
+                tmpPosition.x += SPEED.x * speedRatio;
             }
             else
             {
-                tmpPosition.x -= SPEED.x * RATIO;
+                tmpPosition.x -= SPEED.x * speedRatio;
             }
         }
         else
         {
             if (diffY > 0)
             {
-                tmpPosition.y += SPEED.y * RATIO;
+                tmpPosition.y += SPEED.y * speedRatio;
             }
             else
             {
-                tmpPosition.y -= SPEED.y * RATIO;
+                tmpPosition.y -= SPEED.y * speedRatio;
             }
         }
         // スピードによってアニメーションの方向を変更
@@ -88,13 +98,14 @@ public class EnemyController : MonoBehaviour
         return false;
     }
 
-    void OnTriggerEnter2D (Collider2D hit)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (hit.CompareTag ("Player")) {
+        if (collision.collider.CompareTag ("Player")) {
             Debug.Log("PlayerはEnemyに接触した。 OnTriggerEnter2D.");
             //TODO 敵に当たったらGame Overのシーンに移動する
             SceneManager.LoadScene("GameOver");
         }
+        
     }
 
 }
