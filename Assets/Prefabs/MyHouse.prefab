@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5863579113187947499}
   - component: {fileID: 1178882335175837463}
   - component: {fileID: 5305437407657339138}
+  - component: {fileID: 6011730935912364176}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: MyHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,3 +129,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6011730935912364176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6457057001205491620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fe45f280e1f2849a838b76b6f44731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

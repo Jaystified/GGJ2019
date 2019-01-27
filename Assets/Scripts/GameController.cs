@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     {
         generator = GetComponent<MazeConstructor>();      // 2
         generator.GenerateNewMaze(sizex, sizey);
+        int[] myHousePosition = new int[] {sizex-2, sizey-1};
+                    
         for (int y=0;y<sizey;y++) {
             for (int x=0;x<sizex;x++)
             {
@@ -46,6 +48,7 @@ public class GameController : MonoBehaviour
             }
         }
         Instantiate(Player, new Vector3(1 * spriteSize, 1 * spriteSize, 0), Quaternion.identity);
+        // Instantiate(Player, new Vector3(myHousePosition[0] * spriteSize, (myHousePosition[1]-1) * spriteSize, 0), Quaternion.identity);
         Tuple<int, int> enemyPosition = RandomPosition();
         //Instantiate(Enemy, new Vector3(enemyPosition.Item1 * spriteSize, enemyPosition.Item2 * spriteSize, 0), Quaternion.identity);
 
