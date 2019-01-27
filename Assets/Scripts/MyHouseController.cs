@@ -11,7 +11,7 @@ public class MyHouseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        door = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

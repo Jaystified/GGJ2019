@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c31dee9b2bdb2643a982f904b2d35a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_SPEED: 0.1
+  DEFAULT_SPEED: 0.01
   CAUSION_SPEED_RATIO: 3
   SPEED: {x: 0.05, y: 0.05}
 --- !u!70 &8386293904986135412
@@ -162,7 +162,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2656678936414340758}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2ae74d10c3401b3c48c9b04926cb4d84, type: 3}
