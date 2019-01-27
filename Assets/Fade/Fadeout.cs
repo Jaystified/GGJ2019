@@ -21,7 +21,7 @@ public class Fadeout : MonoBehaviour
     //透明度を変更するパネルのイメージ
     Image fadeImage;
 
-    
+    private bool starting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,10 @@ public class Fadeout : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (isFadeIn)
         {
             StartFadeIn();
@@ -67,6 +71,10 @@ public class Fadeout : MonoBehaviour
         fadeImage.enabled = true;  // a)パネルの表示をオンにする
         if (Input.GetKey(KeyCode.Space))
         {
+            starting = true;
+        }
+        if (starting)
+        {
             alfa += fadeSpeed;         // b)不透明度を徐々にあげる
             SetAlpha();               // c)変更した透明度をパネルに反映する
             if (alfa >= 1)
@@ -75,7 +83,6 @@ public class Fadeout : MonoBehaviour
                 SceneManager.LoadScene("Description");
             }
         }
-       
     }
 
     void SetAlpha()

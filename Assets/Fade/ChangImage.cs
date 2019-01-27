@@ -44,6 +44,10 @@ private float timeTrigger = 0;
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         timeTrigger += Time.deltaTime;
 
         if (timeTrigger >= timeOut)
