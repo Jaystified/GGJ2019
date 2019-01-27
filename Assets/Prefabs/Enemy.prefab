@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c31dee9b2bdb2643a982f904b2d35a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RATIO: 0.1
+  RATIO: 1
   SPEED: {x: 0.05, y: 0.05}
 --- !u!70 &8386293904986135412
 CapsuleCollider2D:
@@ -155,7 +155,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0012526512, y: 0.91}

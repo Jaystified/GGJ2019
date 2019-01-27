@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Player = gameObject;
+        //this.animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
