@@ -29,8 +29,9 @@ public class KeyController : MonoBehaviour
             pick.PlayOneShot(picksound);
             Debug.Log("Player has key. playerController.hasKey=" + playerController.hasKey);
             GetComponent<BoxCollider2D>().enabled = false;
-            
-            Destroy(gameObject);
+            gameObject.GetComponent<SpriteRenderer>().enabled=false;
+                
+            // hit.gameObject.SetActive(false);
         }
     }  
 
