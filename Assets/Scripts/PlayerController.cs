@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Player = gameObject;
         //this.animator = GetComponent<Animator>();
     }
 
