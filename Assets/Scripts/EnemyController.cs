@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class EnemyController : MonoBehaviour
         if (hit.CompareTag ("Player")) {
             Debug.Log("PlayerはEnemyに接触した。 OnTriggerEnter2D.");
             //TODO 敵に当たったらGame Overのシーンに移動する
+            SceneManager.LoadScene("GameOver");
         }
     }
 
