@@ -20,10 +20,11 @@ public class MyHouseController : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D (Collider2D hit)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (hit.CompareTag ("Player")) {
-            PlayerController playerController = hit.gameObject.GetComponent<PlayerController>();
+
+        if (collision.collider.CompareTag ("Player")) {
+            PlayerController playerController = collision.collider.gameObject.GetComponent<PlayerController>();
             Debug.Log("Playerが家に入った。playerController.hasKey=" + playerController.hasKey);
             if (playerController.hasKey)
             {
@@ -36,5 +37,8 @@ public class MyHouseController : MonoBehaviour
             }
             
         }
-    }      
+
+
+    }
+   
 }
